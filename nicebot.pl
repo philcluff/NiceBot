@@ -108,7 +108,7 @@ sub said {
 
     # Magic Eightball
     if ($args->{body} =~ /eightball:\s*(.*)/i) {
-        if ($args->{body}  =~ /pizza/) {
+        if ($args->{body}  =~ /pizza/i ) {
             $self->say(body => "$args->{who}, " . "Pizza?! YES!", channel => $args->{channel});
         }
         else {
