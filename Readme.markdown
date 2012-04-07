@@ -2,7 +2,7 @@
 
 ## To run:
 * Install CPAN Deps (TODO: Document)
-    $ ./nicebot.pl
+          $ ./nicebot.pl
 
 ## More Info:
 
