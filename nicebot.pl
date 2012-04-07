@@ -108,7 +108,12 @@ sub said {
 
     # Magic Eightball
     if ($args->{body} =~ /eightball:\s*(.*)/i) {
-      $self->say(body => "$args->{who}, " . ask($1), channel => $args->{channel});
+        if ($args->{body}  =~ /pizza/) {
+            $self->say(body => "$args->{who}, " . "Pizza?! YES!", channel => $args->{channel});
+        }
+        else {
+            $self->say(body => "$args->{who}, " . ask($1), channel => $args->{channel});
+        }
     }
 
     # IMDB Movie titles (Eval'd to prevent crash)
