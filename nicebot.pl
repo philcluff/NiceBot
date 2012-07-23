@@ -28,9 +28,9 @@ foreach $line (<DATA>) {
 
 # Init NiceBot!
 NiceBot->new(
-	     server => "stitch.chatspike.net",
+	     server => "irc.chatspike.net",
 	     port   => "6667",
-	     channels => ["#pub", "#nicebot"],
+	     channels => ["#pub", "#nicebot", "#reith"],
 	     nick      => "NiceBot",
 	     alt_nicks => ["VeryNiceBot"],
 	     username  => "nicebot",
