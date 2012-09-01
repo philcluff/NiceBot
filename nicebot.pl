@@ -64,6 +64,15 @@ sub said {
       $self->say(body => "Let's play Numberwang!", channel => $args->{channel});
     }
 
+    if ($args->{body} =~ /numberwang: scores/i) {
+
+      $self->say(body => "The Numberwang scores are:", channel => $args->{channel});
+      foreach $foo (keys %numberwang_scores) {
+          $self->say(body => $foo . ": " . $numberwang_scores{$foo}, channel => $args->{channel});
+	}
+
+    }
+
     # Numberwang Stop command.
     if ($args->{body} =~ /numberwang: stop/i) {
 
@@ -200,15 +209,59 @@ sub said {
     }
 
     # Bone...
-    if ($args->{body} =~ /bone:/i) {
+    if ($args->{body} =~ /bone/i) {
       $self->say(body => pickup(), channel => $args->{channel});
     }
-  };
+
+    # That's what she said!
+    if ($args->{body} =~ /her/i) {
+        $self->thats_what_she_said($args);
+    }
+
+    if ($args->{body} =~ /finger/i) {
+        $self->thats_what_she_said($args);
+    }
+
+    if ($args->{body} =~ /touch/i) {
+        $self->thats_what_she_said($args);
+    }
+
+    if ($args->{body} =~ /sex/i) {
+        $self->thats_what_she_said($args);
+    }
+
+    if ($args->{body} =~ /fuck it/i) {
+        $self->thats_what_she_said($args);
+    }
+
+    if ($args->{body} =~ /up it/i) {
+        $self->thats_what_she_said($args);
+    }
+
+    if ($args->{body} =~ /on it/i) {
+        $self->thats_what_she_said($args);
+    }
+
+    if ($args->{body} =~ /in the/i) {
+        $self->thats_what_she_said($args);
+    }
+
+    if ($args->{body} =~ /all over/i) {
+        $self->thats_what_she_said($args);
+    }
+
+
+ };
 
   # Someone managed to break NiceBot. :(
   if ($@) {
     $self->say(body => "Oh my. You broke me. Someone call GeneticGenesis!", channel => $args->{channel});
   }
+}
+
+sub thats_what_she_said {
+    my ($self, $args) = @_;
+#    $self->say(body => "That's what she said!", channel => $args->{channel});
 }
 
 sub userquit {
