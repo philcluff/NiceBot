@@ -12,7 +12,6 @@ use FindBin qw($Bin);
 
 # Numberwang Variables.
 my $numberwang_flag = 0;
-my $numberwang_chan;
 my %numberwang_scores; 
 
 # Array to hold GLADOS quotes.
